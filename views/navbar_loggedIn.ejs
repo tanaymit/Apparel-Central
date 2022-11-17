@@ -9,11 +9,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">All Products</a></li>
+                        <li><a class="dropdown-item" href="/allProducts">All Products</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="#!">Popular Items</a></li>
                         <li><a class="dropdown-item" href="/newArrivals">New Arrivals</a></li>
@@ -23,18 +23,23 @@
                 <li class="nav-item"><a class="nav-link" href="/addProduct">Add Product</a></li>
                 
             </ul>
-            <form class="d-flex" action="cart">
+            <div class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-0">
                     <li class="nav-item" ><a class="nav-link"><%=fname%></a></li>
-                    <li class="nav-item" ><button class="btn btn-outline-dark" href="/logout">Log Out</button></li>
-                    
+                    <li class="nav-item" >
+                        <form action="logout" method="post">
+                        <button class="btn btn-outline-dark">Log Out</button></li>
+                        </form>
                 </ul>
+                
+                <form action="/cartpage" method="post">
                 <button class="btn btn-outline-dark" type="submit" style="margin-left: 5px;">
                     <i class="bi-cart-fill me-1"></i>
                     Cart
                     <span class="badge bg-dark text-white ms-1 rounded-pill"><%=totalProducts%></span>
                 </button>
             </form>
+            </div>
         </div>
     </div>
 </nav>

@@ -1,0 +1,88 @@
+<%-include('heading')%>
+
+
+    <body>
+        <%-include('navbar')%>
+            <header class="bg-dark py-5 banner vh-100">
+                
+                <div class="container px-4 px-lg-5 my-5">
+                    <div class="text-center text-white">
+                        <h1 class="display-4 fw-bolder">About Us</h1>
+                        <br>
+                        <p class="lead fw-normal">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, pariatur ex vel illum
+                            possimus architecto incidunt iste id odio laboriosam natus tenetur dolor dolorum hic sequi,
+                            non debitis earum reiciendis laudantium aperiam, consectetur dolore! Sint, nulla.</p>
+                            <br>
+                            <p class="lead fw-normal ">
+                             Optio
+                            culpa ut reiciendis quas deleniti illo cupiditate iusto commodi nesciunt quae voluptates ex,
+                            odit ipsa iste earum maiores sit quaerat debitis velit sed magni. Nostrum accusamus
+                            perferendis dolores dignissimos tempore obcaecati minus in ut necessitatibus recusandae
+                            ratione doloremque, soluta, voluptates quasi esse rerum fuga. </p>
+                            <p class="lead fw-normal text-white">
+                            Voluptates tenetur eligendi
+                            alias nam expedita officiis possimus sequi, impedit reprehenderit iusto aperiam enim ipsam
+                            odit quas voluptatem unde!
+
+                        </p>
+                    </div>
+                </div>
+
+            </header>
+
+            <section class=" gradient-custom">
+                <div class="container py-5 h-100">
+                    <div class="row justify-content-center align-items-center h-100">
+                        <div class="col-12 col-lg-9 col-xl-7" style="padding-bottom: 40px">
+                            <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                                <div class="card-body p-4 p-md-5">
+                                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Contact Us</h3>
+                                    <form action="/contact" method="post">
+
+                                        <div class="form-outline">
+                                            <label class="form-label" for="validate" id="validateDOB"></label>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12 mb-4 pb-2">
+
+                                                <div class="form-outline">
+                                                    <input type="email" id="emailAddress" required
+                                                        class="form-control form-control-lg" name="email" />
+                                                    <label class="form-label" for="emailAddress">Email</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-outline">
+                                            <input type="text" id="username" required
+                                                class="form-control form-control-lg" name="topic" />
+                                            <label class="form-label" for="userame">Title</label>
+                                        </div>
+                                        <br>
+                                        <div class="form-outline">
+                                            <textarea name="message" id="" cols="30" rows="4" class="form-control form-control-lg"></textarea>
+
+                                            <label class="form-label" for="password">Enter your message</label>
+                                        </div>
+                                        <br>
+
+                                        <div class="mt-4 pt-2">
+                                            <input class="btn btn-primary btn-lg" type="submit"
+                                                value="Submit" style="background-color: black;" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </section>
+            <%- include("footer.ejs") -%>            
+    </body>
+
+    </html>

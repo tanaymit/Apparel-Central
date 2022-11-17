@@ -10,7 +10,7 @@
   align-items: center;
   height: 100vh;
   background: linear-gradient(45deg, greenyellow, dodgerblue);
-  font-family: "Sansita Swashed", cursive;
+  /* font-family: "Sansita Swashed", cursive; */
 }
 .center {
   position: relative;
@@ -77,41 +77,16 @@
 <body>
     <!-- Navbar -->
     <%- include("navbar_loggedIn") -%>
-    <!-- <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
-            <div class="row justify-content-center align-items-center h-100">
-                <div class="col-12 col-lg-9 col-xl-7" style="padding-bottom: 40px">
-                    <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-                        <div class="card-body p-4 p-md-5">
-                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Add Product</h3>
-                            <form action="/" method="post">
-                                <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <input type="text" id="firstName" required class="form-control form-control-lg" name="Firstname"/>
-                                            <label class="form-label" for="firstName">Product Name</label>
-                                        </div>
-                  
-                                        <div class="form-outline">
-                                             <label class="form-label" for="validate" id="validateName"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
+
     <div class="main">
         <div class="center">
             <h1>Add your product</h1>
-            <form action="/addProduct" method="post">
+            <form action="/addProduct" method="post" enctype="multipart/form-data">
               <div class="inputbox">
                 <input type="text" required="required" name="product">
                 <span>Product Name</span>
               </div>
+
               <div class="inputbox">
                 <input type="text" required="required" name="price">
                 <span>Price</span>
@@ -119,8 +94,8 @@
 
               <div class="inputbox">
                 <input type="file" required="required" name="image">
-                <span></span>
               </div>
+
               <div class="inputbox">
                 <input type="submit" value="Submit">
               </div>

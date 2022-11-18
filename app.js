@@ -10,76 +10,77 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 app.set("view engine","ejs");
 app.use(fileUpload());
+require("dotenv").config();
 // import credntials from .env;
 
 let products = [{
-    name : "Clavin Klein CK-5327A",
+    name : "Trendy Sweater",
     price : 55,
-    image : "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//c/a/calvin-klein-ck5327a-018-size-52-eyeglasses_m_7808.jpg",
+    image : "https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/445580/item/phgoods_31_445580.jpg?width=1008&impolicy=quality_75",
     count : 0
 },
 {
-    name: "Lance Air",
+    name: "Casual Blazer",
     price: 75,
-    image: "https://c3.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fit,w_auto,g_center,q_auto:best,dpr_2.6,f_auto/ibxjrxzsjcuxlavkzkge",
+    image: "https://i.pinimg.com/originals/59/17/8d/59178d79aae9aa45ff6fc97abedf15d5.jpg",
     count : 0
 }
 ];
 
 var cart = [{
     productId: 1,
-    name:"Prada Rectangle Grey",
+    name:"Kipsta Checked Shirt",
     price: 80.00,
-    image: "https://cdn11.bigcommerce.com/s-28d61/products/9138/images/114235/eyewear-brands-prada-rectangle-grey-ufj1o1-metal-semi-rimless-mens-eyewear-0ps-55fv__12099.1653080532.1280.1280.jpg?c=2",
+    image: "https://contents.mediadecathlon.com/p1830216/a5c3c27c1a1dab5cb7b295dbc369031a/p1830216.jpg",
     count:0
   },
   {
     productId: 2,
-    name:'Oakley Sportswear',
+    name:'US Polo Casual Shirt',
     price: 40.00,
-    image:'https://m.media-amazon.com/images/I/719pG5fEsrL._UX679_.jpg',
+    image:'https://assetscdn1.paytm.com/images/catalog/product/A/AP/APPUS-PEPPER-NEASHA322624B7835732/1563042168624_0..png',
     count:0
   },
   {
     productId: 3,
-    name: 'Ray Ban Classics',
+    name: 'Jeans Shorts',
     price: 50.00,
-    image: 'https://ph-test-11.slatic.net/p/39920b97783448ff127dcbb4d546722a.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnGjMMGhOjT52VhcnCr98zGDwYVLmQYegzMw&usqp=CAU',
     count:0
   },
   {
     productId: 4,
-    name: 'Ray Ban Sunglasses',
+    name: 'Jockey Shorts',
     price: 45.00,
-    image:'https://images.ray-ban.com/is/image/RayBan/805289114567__001.png?impolicy=RB_Product_front&width=720&bgc=%23f2f2f2',
+    image:'https://cdn.shopify.com/s/files/1/0266/6276/4597/files/Banner_15.jpg?v=1667645802',
     count:0
   },
   {
     productId: 5,
-    name:'Oakley Sunglasses',
+    name:'Ripped Jeans',
     price: 47.50,
-    image: 'https://5.imimg.com/data5/AX/HL/MY-8321312/men-s-oakley-sunglasses-500x500.jpg',
+    image: 'https://cdn.shopify.com/s/files/1/0266/6276/4597/products/300903250DKBLUE_2_1024x1024.jpg?v=1658427365',
     count:0
   },
   {
     productId: 6,
-    name: 'Diesel Womens Stylish',
+    name: 'Navy Trousers',
     price: 99.99,
-    image:'https://m.media-amazon.com/images/I/71oO71TTMGL._UL1500_.jpg',
+    image:'https://m.media-amazon.com/images/I/61WIS7hjQ8S._UX569_.jpg',
     count:0
   },
   {
     productId: 7,
-    name:'Diesel Rimless',
+    name:'Casual Blue Suit',
     price: 60.00,
-    image: 'https://cdn1.titaneyeplus.com/tep_m2_prod/media/catalog/product/cache/614e2406485059d8c03655e235f03687/f/s/fsl761060515252_3_lar.jpg',
+    image: 'https://www.bagteshfashion.com/public/storage/uploads/images/product/product_image/MSU276.jpg',
     count:0
   },
   {
     productId: 8,
-    name:'Gucci Photochromic Sunglasses',
+    name:'Zipper Hoodie',
     price: 100.00,
-    image: "https://cz.shadestation.com/media/thumbs/920x575/media/product_images/Gucci-sunglasses-GG0062S-019-57fw920fh575.jpg",
+    image: "https://img1.exportersindia.com/product_images/bc-full/2022/8/10667111/mens-zipper-sweatshirt-1661245819-6503920.jpeg",
     count:0
   }
   ];
@@ -269,7 +270,7 @@ app.post("/addProduct", (req,res)=>{
     const {image} = req.files;
     if(!image) return res.sendStatus(400);
     console.log(image);
-    image.mv('C:/WebDev/EyeNation/public/assets/uploads/' + image.name);
+    image.mv('D:/iwp/Project/IWP-Project/public/assets/uploads/' + image.name);
     let newProduct = {
         name : req.body.product,
         price : req.body.price,
